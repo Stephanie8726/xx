@@ -1,9 +1,18 @@
 using System;
+using System.Collections.Generic;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning05 World!");
+        List<Shape> shapes = new List<Shape>();
+        shapes.Add(new Square("Red", 5.0));
+        shapes.Add(new Rectangle("Blue", 4.0, 6.0));
+        shapes.Add(new Circle("Green", 3.0));
+
+        foreach (var shape in shapes)
+        {
+            Console.WriteLine($"The {shape.Color} shape has an area of {shape.GetArea()}");
+        }
     }
 }
